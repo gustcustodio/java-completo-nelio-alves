@@ -1,4 +1,4 @@
-package estrutura.sequencial;
+package estrutura_sequencial;
 
 public class Aula25Casting {
     public static void main(String[] args) {

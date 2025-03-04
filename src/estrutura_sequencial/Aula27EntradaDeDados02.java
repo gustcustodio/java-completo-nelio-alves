@@ -1,8 +1,8 @@
-package estrutura.sequencial;
+package estrutura_sequencial;
 
 import java.util.Scanner;
 
-public class Aula26EntradaDeDados02 {
+public class Aula27EntradaDeDados02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int x;
