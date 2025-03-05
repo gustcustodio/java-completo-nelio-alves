@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercicio04Parte2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int horaInicial, horaFinal, duracao = 0;
+        int horaInicial, horaFinal, duracao;
 
         System.out.print("Digite a hora inicial: ");
         horaInicial = sc.nextInt();
