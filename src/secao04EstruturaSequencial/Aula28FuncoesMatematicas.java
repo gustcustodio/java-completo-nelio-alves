@@ -1,4 +1,4 @@
-package estrutura_sequencial;
+package secao04EstruturaSequencial;
 
 public class Aula28FuncoesMatematicas {
     public static void main(String[] args) {

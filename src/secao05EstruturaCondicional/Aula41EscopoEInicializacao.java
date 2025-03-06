@@ -1,4 +1,4 @@
-package estrutura_condicional;
+package secao05EstruturaCondicional;
 
 public class Aula41EscopoEInicializacao {
     public static void main(String[] args) {

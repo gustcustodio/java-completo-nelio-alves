@@ -1,4 +1,4 @@
-package estrutura_sequencial;
+package secao04EstruturaSequencial;
 
 import java.util.Scanner;
 

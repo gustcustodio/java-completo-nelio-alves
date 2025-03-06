@@ -1,4 +1,4 @@
-package estrutura_condicional;
+package secao05EstruturaCondicional;
 
 import java.util.Scanner;
 
