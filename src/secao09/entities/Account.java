@@ -14,10 +14,10 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    public Account(String accountHolder, int accountNumber, double accountBalance) {
+    public Account(String accountHolder, int accountNumber, double initialDeposit) {
         this.accountHolder = accountHolder;
         this.accountNumber = accountNumber;
-        this.accountBalance = accountBalance;
+        deposit(initialDeposit);
     }
 
     public String getAccountHolder() {
@@ -26,6 +26,22 @@ public class Account {
 
     public void setAccountHolder(String accountHolder) {
         this.accountHolder = accountHolder;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void deposit(double deposit) {
+        accountBalance += deposit;
+    }
+
+    public void withdraw(double withdraw) {
+        accountBalance -= withdraw + 5.0;
     }
 
     public String toString() {

@@ -32,8 +32,25 @@ public class ExercicioDeFixacao {
             account = new Account(accountHolder, accountNumber);
         }
 
+        System.out.println();
         System.out.println("Account data: ");
+        System.out.println(account);
+        System.out.println();
+
+        System.out.print("Enter a deposit value: ");
+        deposit = sc.nextDouble();
+        account.deposit(deposit);
+        System.out.println();
+
+        System.out.println("Updated account data: ");
+        System.out.println(account);
+        System.out.println();
+
+        System.out.print("Enter a withdraw value: ");
+        withdraw = sc.nextDouble();
+        account.withdraw(withdraw);
         System.out.print(account);
+        System.out.println();
 
         sc.close();
     }
