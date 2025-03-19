@@ -11,8 +11,8 @@ public class Exercicio11 {
         System.out.print("Quantas pessoas serão digitadas? ");
         int n = sc.nextInt();
 
-        double smallestHeight, largestHeight = 0.0;
-
+        double sumFemaleHeight = 0;
+        int countMans = 0, countFemales = 0;
         char[] gender = new char[n];
         double[] height = new double[n];
 
@@ -22,18 +22,33 @@ public class Exercicio11 {
             System.out.printf("Gênero da %d pessoa: ", i + 1);
             gender[i] = sc.next().charAt(0);
 
+            if (gender[i] == 'F') {
+                sumFemaleHeight += height[i];
+                countFemales++;
+            } else if (gender[i] == 'M') {
+                countMans++;
+            }
+        }
 
-            //            if (height[i] < smallestHeight) {
-            //                smallestHeight = height[i];
-            //            }
+        double smallestHeight = height[0];
+        double largestHeight = height[0];
 
+        for (int i = 1; i < n; i++) {
+            if (height[i] < smallestHeight) {
+                smallestHeight = height[i];
+            }
             if (height[i] > largestHeight) {
                 largestHeight = height[i];
             }
         }
 
-        //        System.out.println("Menor altura: " + smallestHeight);
+        double averageFemales = sumFemaleHeight / countFemales;
+
+        System.out.println("Menor altura: " + smallestHeight);
         System.out.println("Maior altura: " + largestHeight);
+        System.out.println("Media das alturas da mulheres: "
+                + String.format("%.2f", averageFemales));
+        System.out.println("Número de homens: " + countMans);
 
         sc.close();
     }
