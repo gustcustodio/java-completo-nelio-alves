@@ -21,7 +21,13 @@ public class Aula100ExercicioProposto {
         for (int i = 0; i < n; i++) {
             System.out.printf("Employee #%d%n", i + 1);
             System.out.print("ID: ");
-            Integer id = sc.nextInt();
+            int id = sc.nextInt();
+            while (hasId(list, id)) {
+                System.out.print("ID already taken! Try again: ");
+                id = sc.nextInt();
+            }
+
+
             sc.nextLine();
             System.out.print("Name: ");
             String name = sc.nextLine();
@@ -35,12 +41,38 @@ public class Aula100ExercicioProposto {
         System.out.print("Enter the employee id that will have salary increase: ");
         int idSalaryIncrease = sc.nextInt();
 
+        Employee employee = list
+                .stream()
+                .filter(x -> x.getId() == idSalaryIncrease)
+                .findFirst()
+                .orElse(null);
+
+        if (employee == null) {
+            System.out.println("This id does not exist!");
+        } else {
+            System.out.print("Enter the percentage: ");
+            double percent = sc.nextDouble();
+            employee.increaseSalary(percent);
+        }
 
         // showing data //
+        System.out.println();
+        System.out.println("List of employees: ");
         for (Employee obj : list) {
             System.out.println(obj);
         }
 
         sc.close();
     }
+
+    public static boolean hasId(List<Employee> list, int id) {
+        Employee employee = list
+                .stream()
+                .filter(x -> x.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        return employee != null;
+    }
+
 }
