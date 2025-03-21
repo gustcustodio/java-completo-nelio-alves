@@ -30,7 +30,10 @@ public class Aula104Exercicio {
                     if (j > 0) {
                         System.out.println("Left: " + matriz[i][j - 1]);
                     }
-                    if (j < matriz[i].length) {
+                    if (i > 0) {
+                        System.out.println("Up: " + matriz[i - 1][j]);
+                    }
+                    if (j < matriz[i].length - 1) {
                         System.out.println("Right: " + matriz[i][j + 1]);
                     }
                     if (i < matriz.length - 1) {
