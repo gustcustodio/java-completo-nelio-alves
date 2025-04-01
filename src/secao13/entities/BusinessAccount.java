@@ -1,4 +1,4 @@
-package secao13.aula130.entities;
+package secao13.entities;
 
 public class BusinessAccount extends Account {
     private Double loanLimit;
