@@ -1,4 +1,4 @@
-package secao14.challenge.model;
+package secao14.challenge;
 
 import secao14.challenge.model.entities.Account;
 import secao14.challenge.model.exceptions.BusinessException;
