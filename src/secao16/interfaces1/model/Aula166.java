@@ -1,9 +1,9 @@
-package secao16;
+package secao16.interfaces1.model;
 
-import secao16.model.entities.CarRental;
-import secao16.model.entities.Vehicle;
-import secao16.model.services.BrazilTaxService;
-import secao16.model.services.RentalService;
+import secao16.interfaces1.model.entities.CarRental;
+import secao16.interfaces1.model.entities.Vehicle;
+import secao16.interfaces1.model.services.BrazilTaxService;
+import secao16.interfaces1.model.services.RentalService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

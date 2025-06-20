@@ -1,4 +1,4 @@
-package secao16.model.entities;
+package secao16.interfaces1.model.entities;
 
 import java.time.LocalDateTime;
 

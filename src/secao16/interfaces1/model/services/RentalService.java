@@ -1,7 +1,7 @@
-package secao16.model.services;
+package secao16.interfaces1.model.services;
 
-import secao16.model.entities.CarRental;
-import secao16.model.entities.Invoice;
+import secao16.interfaces1.model.entities.CarRental;
+import secao16.interfaces1.model.entities.Invoice;
 
 import java.time.Duration;
 

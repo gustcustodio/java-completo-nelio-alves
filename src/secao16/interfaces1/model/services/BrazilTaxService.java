@@ -1,4 +1,4 @@
-package secao16.model.services;
+package secao16.interfaces1.model.services;
 
 public class BrazilTaxService implements TaxService {
     public double tax (double amount) {
