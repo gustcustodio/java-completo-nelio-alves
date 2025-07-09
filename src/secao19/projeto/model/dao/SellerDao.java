@@ -1,5 +1,6 @@
 package secao19.projeto.model.dao;
 
+import secao19.projeto.model.entities.Department;
 import secao19.projeto.model.entities.Seller;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface SellerDao {
     Seller findById(Integer id);
 
     List<Seller> findAll();
+
+    List<Seller> findByDepartment(Department department);
 }
