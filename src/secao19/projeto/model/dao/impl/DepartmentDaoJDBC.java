@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DepartmentDaoJDBC implements DepartmentDao {
-    private Connection connection;
+    private final Connection connection;
 
     public DepartmentDaoJDBC(Connection connection) {
         this.connection = connection;
@@ -57,7 +57,31 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void update(Department obj) {
+        PreparedStatement preparedStatement = null;
 
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE department "
+                            + "SET Name = ? "
+                            + "WHERE Id = ?"
+            );
+
+            preparedStatement.setString(1, obj.getName());
+            preparedStatement.setInt(2, obj.getId());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected < 0) {
+                throw new DbException("Unexpected error! No rows affected!");
+            }
+
+            System.out.println("Update completed!");
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            DB.closeStatement(preparedStatement);
+        }
     }
 
     @Override

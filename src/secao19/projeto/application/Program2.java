@@ -33,5 +33,10 @@ public class Program2 {
         int id = scanner.nextInt();
         departmentDao.deleteById(id);
          */
+
+        System.out.println("\n=== TEST 5: department update ===");
+        department = departmentDao.findById(3);
+        department.setName("Shoes");
+        departmentDao.update(department);
     }
 }
