@@ -5,10 +5,7 @@ import secao19.db.DbException;
 import secao19.projeto.model.dao.DepartmentDao;
 import secao19.projeto.model.entities.Department;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +20,39 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void insert(Department obj) {
+        PreparedStatement preparedStatement = null;
 
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "INSERT INTO department "
+                            + "(Name)"
+                            + "VALUES "
+                            + "(?)",
+                    Statement.RETURN_GENERATED_KEYS
+            );
+
+            preparedStatement.setString(1, obj.getName());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                ResultSet resultSet = preparedStatement.getGeneratedKeys();
+
+                if (resultSet.next()) {
+                    int id = resultSet.getInt(1);
+                    obj.setId(id);
+
+                    DB.closeResultSet(resultSet);
+                } else {
+                    throw new DbException("Unexpected error! No rows affected!");
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            DB.closeStatement(preparedStatement);
+        }
     }
 
     @Override
