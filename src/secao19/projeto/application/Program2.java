@@ -5,9 +5,11 @@ import secao19.projeto.model.dao.DepartmentDao;
 import secao19.projeto.model.entities.Department;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Program2 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 
         System.out.println("\n=== TEST 1: department findById ===");
@@ -23,6 +25,13 @@ public class Program2 {
         Department newDepartment = new Department(null, "Furniture");
         departmentDao.insert(newDepartment);
         System.out.println("Inserted! New id = " + newDepartment.getId());
+         */
+
+        /*
+        System.out.println("\n=== TEST 4: department delete ===");
+        System.out.print("Enter id for delete test: ");
+        int id = scanner.nextInt();
+        departmentDao.deleteById(id);
          */
     }
 }
